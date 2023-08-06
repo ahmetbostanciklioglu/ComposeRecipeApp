@@ -70,11 +70,21 @@ dependencies {
     //constraintLayout
     implementation("androidx.constraintlayout:constraintlayout:2.2.0-alpha11")
     val fragment_version = "1.3.6"
-    // Kotlin
+
+    // Kotlin Fragment inheritance
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
 
-    val appcompat_version = "1.6.1"
 
+    //Kotlin Super Activity inheritance
+    val appcompat_version = "1.6.1"
     implementation("androidx.appcompat:appcompat:$appcompat_version")
+
+
+    //Navigation Component
+    val nav_version = "2.6.0"
+    // Kotlin
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
 
 }
