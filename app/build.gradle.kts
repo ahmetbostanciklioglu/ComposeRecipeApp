@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.ahmet.bostanciklioglu.composerecipeapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.ahmet.bostanciklioglu.composerecipeapp"
@@ -66,4 +66,15 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    //constraintLayout
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0-alpha11")
+    val fragment_version = "1.3.6"
+    // Kotlin
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
+
+    val appcompat_version = "1.6.1"
+
+    implementation("androidx.appcompat:appcompat:$appcompat_version")
+
 }
