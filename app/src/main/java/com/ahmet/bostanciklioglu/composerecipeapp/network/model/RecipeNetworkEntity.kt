@@ -11,7 +11,13 @@ class RecipeNetworkEntity(
     var title: String? = null,
 
     @SerializedName("rating")
-    var rating: String? = null,
+    var rating: Int? = null,
+
+    @SerializedName("publisher")
+    var publisher: String? = null,
+
+    @SerializedName("featured_image")
+    var featuredImage: String? = null,
 
     @SerializedName("source_url")
     var sourceUrl: String? = null,
