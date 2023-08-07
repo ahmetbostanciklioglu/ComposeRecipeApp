@@ -1,30 +1,30 @@
 package com.ahmet.bostanciklioglu.composerecipeapp.network.model
 
 import com.ahmet.bostanciklioglu.composerecipeapp.domain.model.Recipe
-import com.ahmet.bostanciklioglu.composerecipeapp.domain.util.EntityMapper
+import com.ahmet.bostanciklioglu.composerecipeapp.domain.util.DomainMapper
 
-class RecipeNetworkMapper : EntityMapper<RecipeNetworkEntity, Recipe> {
+class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
 
     //Map from recipe entity[network data class] to recipe[domain recipe which is shared to Ui data class]
-    override fun mapFromEntity(entity: RecipeNetworkEntity): Recipe {
+    override fun mapToDomainModel(model: RecipeDto): Recipe {
         return Recipe(
-            id = entity.pk,
-            title = entity.title,
-            publisher = entity.publisher,
-            featuredImage = entity.featuredImage,
-            rating = entity.rating,
-            sourceUrl = entity.sourceUrl,
-            description = entity.description,
-            cookingInstructions = entity.cookingInstructions,
-            dateAdded = entity.dateAdded,
-            dateUpdated = entity.dateUpdated,
-            ingredients = entity.ingredients ?: listOf()
+            id = model.pk,
+            title = model.title,
+            publisher = model.publisher,
+            featuredImage = model.featuredImage,
+            rating = model.rating,
+            sourceUrl = model.sourceUrl,
+            description = model.description,
+            cookingInstructions = model.cookingInstructions,
+            dateAdded = model.dateAdded,
+            dateUpdated = model.dateUpdated,
+            ingredients = model.ingredients ?: listOf()
         )
     }
 
     //Map from recipe [domain recipe which is shared to Ui data class] to recipe[network data class]
-    override fun mapToEntity(domainModel: Recipe): RecipeNetworkEntity {
-        return RecipeNetworkEntity(
+    override fun mapFromDomainModel(domainModel: Recipe): RecipeDto {
+        return RecipeDto(
             pk = domainModel.id,
             title = domainModel.title,
             publisher = domainModel.publisher,
@@ -39,15 +39,15 @@ class RecipeNetworkMapper : EntityMapper<RecipeNetworkEntity, Recipe> {
         )
     }
 
-    fun fromEntityList(initial: List<RecipeNetworkEntity>): List<Recipe> {
+    fun fromEntityList(initial: List<RecipeDto>): List<Recipe> {
         return initial.map {
-            mapFromEntity(it)
+            mapToDomainModel(it)
         }
     }
 
-    fun toEntityList(initial: List<Recipe>): List<RecipeNetworkEntity> {
+    fun toEntityList(initial: List<Recipe>): List<RecipeDto> {
         return initial.map {
-            mapToEntity(it)
+            mapFromDomainModel(it)
         }
     }
 

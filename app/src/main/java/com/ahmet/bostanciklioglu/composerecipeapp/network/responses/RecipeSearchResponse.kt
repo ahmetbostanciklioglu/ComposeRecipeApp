@@ -1,12 +1,12 @@
 package com.ahmet.bostanciklioglu.composerecipeapp.network.responses
 
-import com.ahmet.bostanciklioglu.composerecipeapp.network.model.RecipeNetworkEntity
+import com.ahmet.bostanciklioglu.composerecipeapp.network.model.RecipeDto
 import com.google.gson.annotations.SerializedName
 
-class RecipeSearchResponse (
+data class RecipeSearchResponse (
     @SerializedName("count")
     var count: Int,
 
     @SerializedName("results")
-    var recipes: List<RecipeNetworkEntity>
+    var recipes: List<RecipeDto>
 )

@@ -3,10 +3,7 @@ package com.ahmet.bostanciklioglu.composerecipeapp
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.ahmet.bostanciklioglu.composerecipeapp.domain.model.Recipe
 import com.ahmet.bostanciklioglu.composerecipeapp.network.RecipeService
-import com.ahmet.bostanciklioglu.composerecipeapp.network.model.RecipeNetworkEntity
-import com.ahmet.bostanciklioglu.composerecipeapp.network.model.RecipeNetworkMapper
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO

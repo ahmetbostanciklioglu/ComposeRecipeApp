@@ -3,7 +3,7 @@ package com.ahmet.bostanciklioglu.composerecipeapp.network.model
 import com.google.gson.annotations.SerializedName
 
 
-class RecipeNetworkEntity(
+data class RecipeDto(
     @SerializedName("pk")
     var pk: Int? = null, //primary key
 
