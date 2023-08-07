@@ -13,6 +13,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.ahmet.bostanciklioglu.composerecipeapp.presentation.ui.recipe_list.RecipeListViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class RecipeFragment : Fragment() {
 
-    private val viewModel: RecipeListViewModel by viewModels()
+    private val viewModel: RecipeListViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
