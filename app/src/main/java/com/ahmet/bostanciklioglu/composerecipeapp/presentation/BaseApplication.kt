@@ -1,4 +1,4 @@
-package com.ahmet.bostanciklioglu.composerecipeapp
+package com.ahmet.bostanciklioglu.composerecipeapp.presentation
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

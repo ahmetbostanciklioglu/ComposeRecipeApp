@@ -1,4 +1,4 @@
-package com.ahmet.bostanciklioglu.composerecipeapp
+package com.ahmet.bostanciklioglu.composerecipeapp.presentation.ui.recipe
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,8 +13,19 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.ahmet.bostanciklioglu.composerecipeapp.presentation.ui.recipe_list.RecipeListViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RecipeFragment : Fragment() {
+
+    private val viewModel: RecipeListViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        println("RecipeFragment: $viewModel")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,9 +33,9 @@ class RecipeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        return  ComposeView(requireContext()).apply {
+        return ComposeView(requireContext()).apply {
             setContent {
-                Column (modifier = Modifier.padding(16.dp)){
+                Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         text = "RECIPE FRAGMENT",
                         style = TextStyle(

@@ -97,9 +97,17 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 
+    //dagger hilt navigation dependency
     implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
     //hilt dependencies
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-compiler:2.44")
+
+
+
+    //to implement hilt to jetpack
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+
+
 }

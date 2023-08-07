@@ -1,7 +1,7 @@
 package com.ahmet.bostanciklioglu.composerecipeapp.di
 
 import android.content.Context
-import com.ahmet.bostanciklioglu.composerecipeapp.BaseApplication
+import com.ahmet.bostanciklioglu.composerecipeapp.presentation.BaseApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
