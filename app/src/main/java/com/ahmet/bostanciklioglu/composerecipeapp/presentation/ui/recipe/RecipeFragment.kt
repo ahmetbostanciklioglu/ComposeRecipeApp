@@ -33,7 +33,6 @@ class RecipeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         return ComposeView(requireContext()).apply {
             setContent {
                 Column(modifier = Modifier.padding(16.dp)) {
@@ -43,12 +42,9 @@ class RecipeFragment : Fragment() {
                             fontSize = 21.sp
                         )
                     )
-
                 }
-
             }
         }
-
     }
 
 }
