@@ -33,11 +33,13 @@ class RecipeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        //First data persisting method
+        //First Method data persisting
        /* viewModel.recipes.observe(viewLifecycleOwner, { recipes ->
         })*/
         return ComposeView(requireContext()).apply {
             setContent {
+
+                //Second Method persisting method
                 val recipes = viewModel.recipes.value
 
                 for (recipe in recipes) {
