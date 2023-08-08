@@ -22,24 +22,17 @@ constructor(
     private @Named("auth_token") val token: String
 ) : ViewModel() {
 
-    //First method for persisting data
-    /*private val _recipes: MutableLiveData<List<Recipe>> = MutableLiveData()
-    val recipes: LiveData<List<Recipe>> get() = _recipes
-    init {
-        //1st method for persisting data in viewModels
-        viewModelScope.launch { 
-            val result = repository.search(token = token, page = 1, query = "chicken")
-            _recipes.value = result
-        }
-    }*/
-
-    //2nd method for persisting data
     val recipes: MutableState<List<Recipe>> = mutableStateOf(listOf())
+
     init {
-        //1st method for persisting data in viewModels
+        newSearch()
+    }
+
+    fun newSearch() {
         viewModelScope.launch {
             val result = repository.search(token = token, page = 1, query = "chicken")
             recipes.value = result
         }
     }
+
 }
