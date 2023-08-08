@@ -105,9 +105,11 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.44")
 
 
-
     //to implement hilt to jetpack
     kapt("androidx.hilt:hilt-compiler:1.0.0")
+
+    //Asynchronously Load Images with glide
+    implementation("com.github.bumptech.glide:glide:4.15.1")
 
 
 }
